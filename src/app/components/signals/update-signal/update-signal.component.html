@@ -1,0 +1,21 @@
+<h3>Update Signal</h3>
+<table class="table" style="width: 300px;">
+    <thead>
+        <tr>
+            <th>(-)</th>
+            <th>qty</th>
+            <th>(+)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <button class="btn btn-danger" (click)="decqty()">-</button>
+            </td>
+            <td>{{qty()}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="incqty()">+</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

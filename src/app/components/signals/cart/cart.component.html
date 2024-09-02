@@ -1,0 +1,43 @@
+<div class="p-5">
+    <h3>Cart</h3>
+    <p>Cart Qty Count: {{qty()}}</p>
+    <div class="row">
+        <div class="col-3">
+            <ul class="list-group">
+                <li *ngFor="let vehicle of vehicleList" (click)="addToCart(vehicle)" class="list-group-item">
+                    {{vehicle.product}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-9">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Class</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total Price</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of cart()">
+                        <td>{{ item.vehicle.product }}</td>
+                        <td>{{ item.vehicle.class }}</td>
+                        <td>{{ item.vehicle.price }}</td>
+                        <td>
+                            <input type="number" class="form-control w-auto" [value]="item.qty" (input)="updateQty($event, item)"/>
+                        </td>
+                        <td>{{ item.qty * item.vehicle.price }}</td>
+                        <td>
+                            <button class="btn btn-danger" type="button" (click)="deleteItem(item)">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

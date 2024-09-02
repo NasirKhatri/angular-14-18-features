@@ -7,16 +7,9 @@ import { BgColorDirective } from 'src/app/directives/bg-color.directive';
   standalone: true,
   imports: [
     CommonModule,
-    BgColorDirective
   ],
   templateUrl: './dir-composition.component.html',
   styleUrls: ['./dir-composition.component.scss'],
-  hostDirectives: [
-    {
-      directive: BgColorDirective,
-      inputs: [ 'color' ]
-    }
-  ]
 })
 export class DirCompositionComponent {
 

@@ -1,0 +1,30 @@
+<div class="p-5">
+    <app-withoutsignal></app-withoutsignal>
+    <br><br>
+    <h3>With Signal</h3>
+    <table class="table">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
+        </tr>
+        <tr>
+            <td>{{fname()}}</td>
+            <td>{{lname()}}</td>
+            <td>{{fullName()}}</td>
+        </tr>
+    </table>
+    <div>
+        <div class="mb-3 d-flex">
+            <input type="text" #fnamet class="form-control" />
+            <button class="btn btn-primary" (click)="changefname(fnamet.value)">Change First Name</button>
+        </div>
+        <br />
+        <div class="mb-3 d-flex">
+            <input type="text" #lnamet class="form-control" />
+            <button class="btn btn-primary" (click)="changelname(lnamet.value)">Change Last Name</button>
+        </div>
+    </div>
+    <br><br>
+    <app-update-signal></app-update-signal>    
+</div>

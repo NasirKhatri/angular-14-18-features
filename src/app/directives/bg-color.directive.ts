@@ -20,7 +20,7 @@ export class BgColorDirective implements OnInit {
   changeBackgroundColor(color: string) {
     this._renderer.setStyle(this._el.nativeElement, 'background-color', color);
     this._renderer.setStyle(this._el.nativeElement, 'display', 'block');
-    this._renderer.setStyle(this._el.nativeElement, 'color', 'white');
+    this._renderer.setStyle(this._el.nativeElement, "padding", "25px")
   }
 
 }
