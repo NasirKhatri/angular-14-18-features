@@ -1,4 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
+import { CanActivateFn } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,7 @@ export class SignalService {
       }, 0)
     })
   }
+
 }
 
 export interface Vehicle {
