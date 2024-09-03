@@ -15,6 +15,7 @@
             <a class="nav-link" routerLink="input-access/4" [queryParams]="{ page: 1, sort: 'asc' }" routerLinkActive="active" >Input-Access</a>
           </li>
         </ul>
+        <button *ngIf="loginStatus()" class="btn" type="button" (click)="logout()">Logout</button>
       </div>
     </div>
 </nav>

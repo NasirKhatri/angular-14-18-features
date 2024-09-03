@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { BgColorDirective } from 'src/app/directives/bg-color.directive';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { BgColorDirective } from 'src/app/directives/bg-color.directive';
   imports: [
     CommonModule,
     RouterModule,
-    BgColorDirective
+    BgColorDirective,
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
@@ -22,5 +23,13 @@ import { BgColorDirective } from 'src/app/directives/bg-color.directive';
 
 })
 export class NavbarComponent {
+  private router = inject(Router);
+  public as = inject(AuthService);
 
+  loginStatus = this.as.loginStatus;
+
+  logout() {
+    this.as.loginStatus.set(false);
+    this.router.navigate(['login']);
+  }
 }

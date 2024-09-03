@@ -4,6 +4,7 @@ import { InputAccessComponent } from './components/input-access/input-access.com
 import { inject } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { loginGuard } from './guards/login.guard';
+import { LoginComponent } from './components/login/login.component';
 
 //
 // Different procedure are used for routing guards to explain possibilites of injection directly in the route
@@ -31,5 +32,9 @@ export const appRoutes: Routes = [
         component: InputAccessComponent,
         resolve: { color: () => 'steelblue'},
         canActivate: [() => inject(AuthService).isLoggedIn()]
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
     }
 ];
